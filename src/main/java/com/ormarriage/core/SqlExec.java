@@ -1,13 +1,18 @@
 package com.ormarriage.core;
 
+import com.ormarriage.OrmConfig;
 import com.ormarriage.core.statement.OrmStatement;
 
 import java.sql.Connection;
 import java.util.List;
 
 public class SqlExec {
-    public SqlExec(Connection conn) {
+    private OrmConfig meta;
+    private Connection conn;
 
+    public SqlExec(Connection conn, OrmConfig meta) {
+        this.meta = meta;
+        this.conn = conn;
     }
 
     public <T> List<T> ToList(OrmStatement ormStatement) {
@@ -17,4 +22,13 @@ public class SqlExec {
     public <T> T First(OrmStatement ormStatement) {
         return null;
     }
+
+    public <T> List<T> ToPrimitiveList() {
+        return null;
+    }
+
+    public <T> T FirstPrimitive() {
+        return null;
+    }
+
 }

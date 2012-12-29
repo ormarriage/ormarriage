@@ -8,11 +8,12 @@ import java.sql.Connection;
 
 public class OrmSessionImpl implements OrmSession {
     private Connection conn;
-    private OrmSessionMeta meta;
+    private OrmRegistry registry;
+
     @Inject
-    public OrmSessionImpl(OrmConnectionProvider connectionProvider, OrmSessionMeta meta) {
+    public OrmSessionImpl(OrmConnectionProvider connectionProvider, OrmRegistry registry) {
         conn = connectionProvider.getConnection();
-        this.meta = meta;
+        this.registry = registry;
     }
 
     @Override

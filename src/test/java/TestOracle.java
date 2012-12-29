@@ -11,8 +11,7 @@ import java.sql.SQLException;
  * Time: 1:31 AM
  * To change this template use File | Settings | File Templates.
  */
-public class TestOracle
-{
+public class TestOracle {
     @Test
     public void testConnection() throws SQLException {
         String url = "jdbc:oracle:thin:@192.168.1.108:1521:xe";
